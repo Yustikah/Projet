@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Projet.LoginPage"
+             Title="LoginPage">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="220"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="50"/> 
+        </Grid.RowDefinitions>
+
+        <StackLayout>
+            <Frame BackgroundColor="Blue" HeightRequest="60" WidthRequest="60" CornerRadius="30" Padding="0" Margin="0,50,0,0" HorizontalOptions="Center">
+                <Image Source="avatar.jpg" Aspect="AspectFill" Margin="0"/>
+            </Frame>
+            <Label Text="Bienvenue" FontFamily="" FontSize="Title" HorizontalOptions="Center" Padding="0" Margin="10" />
+        </StackLayout>
+
+        <Grid RowSpacing="5" Grid.Row="1" Margin="20,20,20,0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="50"/>
+                <RowDefinition Height="50"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="40"/>
+                <RowDefinition Height="40"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            
+            <Label Grid.Row="2" Text="Connectez-vous" FontFamily="" FontSize="Subtitle" HorizontalOptions="Center" />
+
+            <StackLayout Grid.Row="3" Orientation="Vertical" HorizontalOptions="CenterAndExpand">
+                <Frame BackgroundColor="Transparent" BorderColor="LightGray" Padding="0" HorizontalOptions="FillAndExpand" CornerRadius="30">
+                    <StackLayout Orientation="Horizontal">
+                        <Frame BackgroundColor="SkyBlue" HeightRequest="40" WidthRequest="40" CornerRadius="30" Padding="0" Margin="5">
+                            <Image Source="avatar_2.png" Aspect="AspectFill" Margin="0"/>
+                        </Frame>
+                        <Entry Text="{Binding Username}" Placeholder="Nom d'utilisateur" TextColor="Gray" VerticalOptions="Center" HorizontalOptions="FillAndExpand" Margin="0,0,20,0"/>
+                    </StackLayout>
+                </Frame>
+
+                <Frame BackgroundColor="Transparent" BorderColor="LightGray" Padding="0" HorizontalOptions="FillAndExpand" CornerRadius="30" Margin="0,15,0,0">
+                    <StackLayout Orientation="Horizontal">
+                        <Frame BackgroundColor="SkyBlue" HeightRequest="40" WidthRequest="40" CornerRadius="30" Padding="0" Margin="5">
+                            <Image Source="cadenas.png" Aspect="AspectFill" Margin="0"/>
+                        </Frame>
+                        <Entry Text="{Binding Password}" Placeholder="Mot de passe" TextColor="Gray" VerticalOptions="Center" HorizontalOptions="FillAndExpand" Margin="0,0,20,0"/>
+                    </StackLayout>
+                </Frame>
+
+                <StackLayout Orientation="Horizontal" Margin="0,10,0,0" Padding="0">
+                    <CheckBox IsChecked="False" Color="Blue"/>
+                    <Label Text="Se rappeler de moi" TextColor="RoyalBlue" FontSize="Small" VerticalTextAlignment="Center" HorizontalTextAlignment="Center"/>
+                    <Label Text="Mot de passe oublié" TextColor="Purple" HorizontalOptions="EndAndExpand" VerticalTextAlignment="Center" HorizontalTextAlignment="Center"/>
+                </StackLayout>
+
+                <Button Text="Se connecter" BackgroundColor="Blue" TextColor="White" CornerRadius="30" WidthRequest="200" Margin="0,15,0,0" Command="{Binding LoginCommand}"/>
+
+                <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand" Margin="0,60,0,0" Padding="0" >
+                    <Label Text="Nouvel utilisateur ? " TextColor="LightGray" FontSize="Small"/>
+                    <Label Text="Enregistrez-vous" TextColor="RoyalBlue" FontSize="Small"/>
+
+                    <StackLayout.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="TapeGestureRecognize_Tapped_for_Registration" />
+                    </StackLayout.GestureRecognizers>
+                </StackLayout>
+            </StackLayout>
+        </Grid>
+        
+    </Grid>
+    
+    
+</ContentPage>

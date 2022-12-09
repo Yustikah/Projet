@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Projet.Registration"
+             Title="Enregistrement">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="220"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="50"/>
+        </Grid.RowDefinitions>
+
+        <StackLayout>
+            <Label Text="Créez un compte" FontFamily="" FontSize="Title" HorizontalOptions="Center" Padding="0" Margin="25" />
+        </StackLayout>
+
+        <Grid RowSpacing="5" Grid.Row="1" Margin="20,20,20,0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="50"/>
+                <RowDefinition Height="50"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="40"/>
+                <RowDefinition Height="40"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+
+            <Label Grid.Row="2" Text="Enregistrez-vous" FontFamily="" FontSize="Subtitle" HorizontalOptions="Center" />
+
+            <StackLayout Grid.Row="3" Orientation="Vertical" HorizontalOptions="CenterAndExpand">
+                <Frame BackgroundColor="Transparent" BorderColor="LightGray" Padding="0" HorizontalOptions="FillAndExpand" CornerRadius="30">
+                    <StackLayout Orientation="Horizontal">
+                        <Frame BackgroundColor="SkyBlue" HeightRequest="40" WidthRequest="40" CornerRadius="30" Padding="0" Margin="5">
+                            <Image Source="avatar_2.png" Aspect="AspectFill" Margin="0"/>
+                        </Frame>
+                        <Entry Text="{Binding Username}" Placeholder="Nom d'utilisateur" TextColor="Gray" VerticalOptions="Center" HorizontalOptions="FillAndExpand" Margin="0,0,20,0"/>
+                    </StackLayout>
+                </Frame>
+
+                <Frame BackgroundColor="Transparent" BorderColor="LightGray" Padding="0" HorizontalOptions="FillAndExpand" CornerRadius="30" Margin="0,15,0,0">
+                    <StackLayout Orientation="Horizontal">
+                        <Frame BackgroundColor="SkyBlue" HeightRequest="40" WidthRequest="40" CornerRadius="30" Padding="0" Margin="5">
+                            <Image Source="cadenas.png" Aspect="AspectFill" Margin="0"/>
+                        </Frame>
+                        <Entry Text="{Binding Password}" Placeholder="Mot de passe" TextColor="Gray" VerticalOptions="Center" HorizontalOptions="FillAndExpand" Margin="0,0,20,0"/>
+                    </StackLayout>
+                </Frame>
+
+                <Frame BackgroundColor="Transparent" BorderColor="LightGray" Padding="0" HorizontalOptions="FillAndExpand" CornerRadius="30" Margin="0,15,0,0">
+                    <StackLayout Orientation="Horizontal">
+                        <Frame BackgroundColor="SkyBlue" HeightRequest="40" WidthRequest="40" CornerRadius="30" Padding="0" Margin="5">
+                            <Image Source="mail.png" Aspect="AspectFill" Margin="0"/>
+                        </Frame>
+                        <Entry Text="{Binding Email}" Placeholder="Adresse mail" TextColor="Gray" VerticalOptions="Center" HorizontalOptions="FillAndExpand" Margin="0,0,20,0"/>
+                    </StackLayout>
+                </Frame>
+
+                <Frame BackgroundColor="Transparent" BorderColor="LightGray" Padding="0" HorizontalOptions="FillAndExpand" CornerRadius="30" Margin="0,15,0,0">
+                    <StackLayout Orientation="Horizontal">
+                        <Frame BackgroundColor="SkyBlue" HeightRequest="40" WidthRequest="40" CornerRadius="30" Padding="0" Margin="5">
+                            <Image Source="tel.png" Aspect="AspectFill" Margin="0"/>
+                        </Frame>
+                        <Entry Text="{Binding Phonenumber}" Placeholder="Numéro de téléphone" TextColor="Gray" VerticalOptions="Center" HorizontalOptions="FillAndExpand" Margin="0,0,20,0"/>
+                    </StackLayout>
+                </Frame>
+
+                <Button Text="S'enregistrer" BackgroundColor="Blue" TextColor="White" CornerRadius="30" WidthRequest="200" Margin="0,25,0,0" Command="{Binding RegisterCommand}"/>
+
+                <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand" Margin="0,60,0,0" Padding="0" >
+                    <Label Text="Vous avez déjà un compte ? " TextColor="LightGray" FontSize="Small"/>
+                    <Label Text="Connectez-vous" TextColor="RoyalBlue" FontSize="Small"/>
+
+                    <StackLayout.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="TapeGestureRecognize_Tapped_for_Login" />
+                    </StackLayout.GestureRecognizers>
+                </StackLayout>
+            </StackLayout>
+        </Grid>
+
+    </Grid>
+
+</ContentPage>
